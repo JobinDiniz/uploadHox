@@ -1,0 +1,104 @@
+
+  <ion-header>
+    <ion-tollbar>
+  
+      <ion-button (click)="back()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+  
+    
+     <ion-title >Comparador</ion-title>
+    
+    
+    <ion-button   (click) ="resetIMC()" class="b"><ion-icon name="refresh-outline"></ion-icon></ion-button>
+  </ion-tollbar>
+
+</ion-header>
+
+<content >
+  <div class="result">
+  <ion-text>{{result}} </ion-text>     
+</div>
+<div class="total">
+<ion-item lines = "none">
+     <ion-title>Produto A</ion-title>
+    </ion-item>
+    <ion-item  lines = "none">
+      <form [formGroup]= "entryForm">
+        <p> R$: </p>
+    <input 
+    class="mon"
+    type= 'tel'
+    placeholder=""
+    currencyMask [(ngModel)]="a"  
+    [ngModelOptions]="{standalone: true}"  
+     currencyMask 
+     [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
+    
+     formControlName="a"/>  
+    </form>
+    </ion-item>
+
+   <ion-item  lines = "none">
+   
+    </ion-item>
+    <ion-item  lines = "none">
+      <form [formGroup]= "entryForm">
+      <p> Peso:</p> 
+      <input
+      class="pes" 
+      type= 'tel'
+      placeholder=""
+      [ngModelOptions]="{standalone: true}"  
+      [(ngModel)]="b"  
+      
+      currencyMask 
+      [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
+      formControlName="b"/>
+    </form>
+  </ion-item>
+  <ion-item  lines = "none">
+  <ion-title>Produto B</ion-title>
+ </ion-item>
+    <ion-item  lines = "none" >
+   
+      <form [formGroup]= "entryForm"> 
+         <p> R$:</p>
+     <input 
+     class="mon"
+     type= 'tel'
+     placeholder=""
+     [ngModelOptions]="{standalone: true}"  
+     currencyMask
+     formControlName ="c"
+     [(ngModel)]="c" 
+     [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/>
+    </form>
+   </ion-item>
+   <ion-item  lines = "none">
+   
+      </ion-item>
+      <ion-item  lines = "none">
+       <form [formGroup]= "entryForm">
+        <p> Peso:</p>
+      <input 
+      placeholder=""
+      type= 'tel'
+      formControlName="d"
+      [ngModelOptions]="{standalone: true}"  
+     class="pes"
+      [(ngModel)]="d" 
+      currencyMask 
+      [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/> 
+     </form>
+     
+</ion-item>
+<ion-item  lines = "none" >
+   <p>Instruções aqui</p>
+   </ion-item>
+ </div>
+         <div>
+          
+          <ion-button (click) ="calcularIMC()"class="c">CALCULAR</ion-button>
+        </div>
+</content>
+
+<ion-footer>BANNER</ion-footer>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-tollbar>
+
+    <ion-button (click)="back()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+
+  
+   <ion-title >Desconto</ion-title>
+  
+  
+  <ion-button   (click) ="resetD()" class="b"><ion-icon name="refresh-outline"></ion-icon></ion-button>
+</ion-tollbar>
+</ion-header>
+<ion-content>
+
+  <ion-item>
+  <label>Valor</label>
+  <label  class="lab">R$ </label>
+    <input type= 'tel'
+    placeholder=""
+    currencyMask [(ngModel)]="t"  
+    [ngModelOptions]="{standalone: true}"  
+     currencyMask 
+     [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
+     name="t"/>
+</ion-item>
+<ion-item>
+  <label>Desconto</label>
+  <label  class="lab">% </label>
+  <input type= 'tel'
+  placeholder=""
+  currencyMask [(ngModel)]="d"  
+  [ngModelOptions]="{standalone: true}"  
+   currencyMask 
+   [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
+   name="d"/>
+</ion-item>
+<ion-item>
+  <label>Valor do desconto</label>
+  <div>
+   <td>{{((d*t)/100)}}</td>
+  </div>
+</ion-item>
+<ion-item>
+  <label>Preço com  desconto</label>
+  <div>
+   <td>{{(t -(d*t)/100)}}</td>
+ </div>
+ </ion-item>
+</ion-content>

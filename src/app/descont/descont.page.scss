@@ -1,0 +1,27 @@
+ion-title{
+    display: flex;
+    text-align: center;
+    padding: center;
+    font-size: 4vh;
+    
+    }
+
+
+ion-tollbar{
+display: flex;
+
+}
+input{
+height: 8vh;
+border: none;
+border-bottom: 1px solid red;
+
+font-size: larger; 
+}
+
+ion-content{
+    flex: 1;
+    
+     
+
+}

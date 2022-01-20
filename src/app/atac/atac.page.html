@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar> <ion-button (click)="back()">Voltar</ion-button>
+    <ion-button (click)="resetAt()"> Zerar</ion-button>
+    <ion-title>Atacado/varejo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+  <label>Atacado</label>
+  <input type= 'tel'
+  placeholder=""
+  currencyMask [(ngModel)]="at"  
+  [ngModelOptions]="{standalone: true}"  
+   currencyMask 
+   [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
+   name="at"/>
+  </ion-item>
+  <ion-item>
+  <label>Varejo</label>
+  <input type= 'tel'
+  placeholder=""
+  currencyMask [(ngModel)]="va"  
+  [ngModelOptions]="{standalone: true}"  
+   currencyMask 
+   [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
+   name="va"/>
+  </ion-item>
+  <td> {{ (at - va) }}</td>
+</ion-content>

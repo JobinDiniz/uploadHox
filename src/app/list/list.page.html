@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar><ion-button (click)="back()">Voltar</ion-button>
+    <ion-title>list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  
+  <ion-content [fullscreen]= "true">
+  
+    <div class="wrapper">
+      
+      <input class= "wrapper__input" [(ngModel)]= "value" list= "Lista" placeholder="Escolha o item">
+        <datalist id="Lista">
+          <option value="Abacate"></option>
+          <option value="Abacaxi"></option>
+          <option value="Almeirão"></option>
+          <option value="Banana"></option>
+          <option value="Coco"></option>
+          <option value="Kiwi"></option>
+          <option value="Mamão"></option>
+          <option value="Laranja"></option>
+      </datalist>
+      
+      <ion-button class="wrapper__button" (click)="addItem() ; clearInput()" [disabled] = 'value.length < 1' >+</ion-button>
+    </div>
+    <div class="list">
+      <div class="list__item" [class.done]= "item.isDone"  *ngFor="let item of items; let ind = index;">
+        {{item.value}}
+      <div>
+      <button class = "btn list__item--done" (click)="setDone(ind)">Feita</button>
+      <button class = "btn list__item--delete" (click)="deleteItem(ind)">Del</button>
+    </div>
+    </div>
+  </div>
+  
+  
+</ion-content>

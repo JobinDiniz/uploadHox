@@ -1,0 +1,39 @@
+.div{
+    padding-top: 5%;
+    text-align: center;
+}
+
+.result{
+text-align: center;
+padding-top: 10vh;
+font-size: large;
+color: crimson;
+}
+
+ ion-title{
+        display: flex;
+        text-align: center;
+        padding: center;
+        font-size: 4vh;
+        
+        }
+
+
+ion-tollbar{
+    display: flex;
+   
+}
+input{
+    height: 8vh;
+    border: none;
+    border-bottom: 1px solid red;
+    
+font-size: larger; 
+}
+
+ion-content{
+        flex: 1;
+        
+         
+    
+}

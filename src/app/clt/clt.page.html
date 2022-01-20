@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-tollbar>
+
+    <ion-button (click)="back()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+
+  
+   <ion-title >CLT /benefício </ion-title>
+  
+  
+  <ion-button   (click) ="reseT()" class="b"><ion-icon name="refresh-outline"></ion-icon></ion-button>
+</ion-tollbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <div class="result">{{f}}</div>
+  <div id="container">
+    <ion-item lines="none" >
+      <div>
+        <ion-item  lines="none">
+    <ion-title >Preço do produto</ion-title>
+  </ion-item>
+   <input  type="tel" [(ngModel)]="p"  
+   placeholder=" R$ 0,00"
+   currencyMask   
+   [ngModelOptions]="{standalone: true}"  
+    currencyMask 
+    [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
+  </div>
+  </ion-item>
+  <ion-item lines="none">
+    <div>
+      <ion-item  lines="none">
+   <ion-title>Ganho por hora</ion-title>
+  </ion-item>
+    <input type="tel" [(ngModel)]="h" placeholder=" R$ 0,00"
+    currencyMask   
+    [ngModelOptions]="{standalone: true}"  
+     currencyMask 
+     [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
+    </div>
+  </ion-item>
+  <div class="div">
+  
+</div>
+  <ion-toolbar>
+    
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="all">
+      <ion-segment-button (click)="calcH()">
+        <ion-label>Horas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button (click)="calcD()">
+        <ion-label>Dias</ion-label>
+      </ion-segment-button>
+      <ion-segment-button (click)="calcM()" >
+        <ion-label>Meses</ion-label>
+      </ion-segment-button>
+      <ion-segment-button (click)="calcY()" >
+        <ion-label>Anos</ion-label>
+      </ion-segment-button>
+     
+      
+     
+    </ion-segment>
+  </ion-toolbar>
+  
+  
+  
+   
+    </div>
+  
+  
+</ion-content>

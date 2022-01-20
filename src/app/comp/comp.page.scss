@@ -1,0 +1,73 @@
+ion-tollbar{
+    display: flex;
+   
+}
+.mon{
+    height: 8vh;
+font-size: larger;
+margin-left: 17px; 
+border: none;
+border-bottom: 1px solid red;
+}
+.pes{
+    height: 8vh;
+    border: none;
+    border-bottom: 1px solid red;
+    
+font-size: larger; 
+}
+
+content{
+    flex: 1;
+     
+}
+.total{
+    overflow: scroll;
+    height: 180px;
+    align-items: center;
+    text-align: center;
+  
+
+}
+
+ion-header{
+    text-align: center;
+}
+ion-toolbar{
+    display: flex;
+    flex: 1;
+    text-align: center;
+}
+ion-button{
+    
+    text-align: center;
+    
+}
+ion-title{
+    display: flex;
+    text-align: center;
+    padding: center;
+    font-size: 4vh;
+    
+    
+}
+
+.left{
+    text-align: left;
+}
+.title{
+    margin-top: -25px;
+
+}
+.result{
+    background-color: aqua;
+    height: 7vh;
+    font-size:larger ;
+}
+text{
+    font-size: larger;
+    
+}
+form{
+    display: flex;
+}

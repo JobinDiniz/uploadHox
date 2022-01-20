@@ -1,0 +1,7 @@
+{
+  "name": "hox",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
