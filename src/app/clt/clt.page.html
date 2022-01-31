@@ -1,51 +1,48 @@
 <ion-header>
   <ion-tollbar>
-
-    <ion-button (click)="back()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
-
-  
-   <ion-title >CLT /benefício </ion-title>
-  
-  
+<ion-button (click)="back()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+<ion-title >CLT /benefício </ion-title>
   <ion-button   (click) ="reseT()" class="b"><ion-icon name="refresh-outline"></ion-icon></ion-button>
 </ion-tollbar>
-
 </ion-header>
 
 <ion-content [fullscreen]="true">
- <div class="result">{{f}}</div>
+  <div class="result">{{f}}</div>
   <div id="container">
-    <ion-item lines="none" >
-      <div>
-        <ion-item  lines="none">
+    
     <ion-title >Preço do produto</ion-title>
-  </ion-item>
-   <input  type="tel" [(ngModel)]="p"  
-   placeholder=" R$ 0,00"
+
+    <ion-item lines="none" class="f" >
+      <p>R$:</p>
+    
+   <input  type="tel" 
+   [(ngModel)]="p"  
+   placeholder="  0,00"
    currencyMask   
    [ngModelOptions]="{standalone: true}"  
     currencyMask 
-    [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
-  </div>
+    [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/>
+  
+</ion-item>
+  <div >
+  <ion-title class="d" >Valor por hora</ion-title>
+ </div>
+    <ion-item lines="none" class="f" >
+      <p>R$:</p>
+    
+   <input  type="tel" 
+   [(ngModel)]="h"  
+   placeholder="  0,00"
+   currencyMask   
+   [ngModelOptions]="{standalone: true}"  
+    currencyMask 
+    [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/>
   </ion-item>
-  <ion-item lines="none">
-    <div>
-      <ion-item  lines="none">
-   <ion-title>Ganho por hora</ion-title>
-  </ion-item>
-    <input type="tel" [(ngModel)]="h" placeholder=" R$ 0,00"
-    currencyMask   
-    [ngModelOptions]="{standalone: true}"  
-     currencyMask 
-     [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
-    </div>
-  </ion-item>
+
   <div class="div">
   
 </div>
-  <ion-toolbar>
-    
-  </ion-toolbar>
+
   <ion-toolbar>
     <ion-segment value="all">
       <ion-segment-button (click)="calcH()">

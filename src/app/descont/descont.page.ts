@@ -7,8 +7,10 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./descont.page.scss'],
 })
 export class DescontPage implements OnInit {
-t: number;
-d: number;
+t = 0;
+d = 0;
+f;
+r;
 
   constructor(   public navCtrl: NavController) { }
 
@@ -21,6 +23,14 @@ d: number;
  resetD(){
 this.t = 0;
 this.d = 0;
+this.f = '';
+this.r = '';
+
+
+ }
+ doneD(){
+   this.f =  `O valor do desconto é R$${(this.d*this.t)/100} ` ;
+   this.r = `Valor com desconto é  R$${(this.t -(this.d*this.t)/100)}` ;
 
  }
 

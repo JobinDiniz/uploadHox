@@ -7,8 +7,9 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./atac.page.scss'],
 })
 export class AtacPage implements OnInit {
-  at: number;
-  va: number;
+  at = 0;
+  va = 0;
+  f;
 
   constructor(public navCtrl: NavController) { }
 
@@ -20,5 +21,12 @@ export class AtacPage implements OnInit {
   resetAt(){
     this.at = 0;
     this.va = 0;
+    this.f = '';
   }
+  doneA(){
+    this.f = `O valor do desconto é R$${(this.at - this.va)}`;
+
+  }
+
+
 }

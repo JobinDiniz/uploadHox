@@ -5,7 +5,7 @@
 
 .result{
 text-align: center;
-padding-top: 10vh;
+margin-top: 3vh;
 font-size: large;
 color: crimson;
 }
@@ -30,10 +30,14 @@ input{
     
 font-size: larger; 
 }
+.f{
+    flex: 1;
+}
+.d{
+ margin-top: 50px;
+}
+ion-segment{
+    border: 2px;
+    background:rgb(41, 128, 0);
 
-ion-content{
-        flex: 1;
-        
-         
-    
 }

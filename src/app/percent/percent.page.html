@@ -12,25 +12,45 @@
 
 </ion-header>
 <ion-content>
-  <ion-item>
-  <label>Total</label>
-  <input type= 'tel'
-  placeholder=""
-  currencyMask [(ngModel)]="n"  
-  [ngModelOptions]="{standalone: true}"  
-   currencyMask 
-   [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
-   name="n"/>
-   </ion-item>
-   <ion-item>
-  <label>Número</label>
-  <input type= 'tel'
-  placeholder=""
-  currencyMask [(ngModel)]="pe"  
-  [ngModelOptions]="{standalone: true}"  
-   currencyMask 
-   [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
-   name="pe"/>
+  
+  <div class="result">{{f}}</div>
+  <div id="container">
+    
+    <ion-title >Preço do produto</ion-title>
+
+    <ion-item lines="none" class="f" >
+      <p>R$:</p>
+    
+   <input  type="tel" 
+   [(ngModel)]="n"  
+   placeholder="  0,00"
+   currencyMask   
+   [ngModelOptions]="{standalone: true}"  
+    currencyMask 
+    [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/>
+  
+</ion-item>
+  <div >
+  <ion-title class="d" >Valor</ion-title>
+ </div>
+    <ion-item lines="none" class="f" >
+      <p>R$:</p>
+    
+   <input  type="tel" 
+   [(ngModel)]="pe"  
+   placeholder="  0,00"
+   currencyMask   
+   [ngModelOptions]="{standalone: true}"  
+    currencyMask 
+    [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/>
   </ion-item>
-  <td> {{ ((pe/n)*100) }}%</td>
-</ion-content>
+
+  <div class="div">
+  
+</div>
+  <ion-fab vertical ="center" horizontal="end" edge slot="fixed" (click) ="doneP()">
+    <ion-fab-button>
+      <ion-icon name="checkmark-sharp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+

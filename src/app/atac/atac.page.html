@@ -1,30 +1,50 @@
 <ion-header>
-  <ion-toolbar> <ion-button (click)="back()">Voltar</ion-button>
-    <ion-button (click)="resetAt()"> Zerar</ion-button>
-    <ion-title>Atacado/varejo</ion-title>
-  </ion-toolbar>
+  <ion-tollbar>
+<ion-button (click)="back()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+<ion-title >Oferta</ion-title>
+  <ion-button   (click) ="resetAt()" class="b"><ion-icon name="refresh-outline"></ion-icon></ion-button>
+</ion-tollbar>
 </ion-header>
 
 <ion-content>
-  <ion-item>
-  <label>Atacado</label>
-  <input type= 'tel'
-  placeholder=""
-  currencyMask [(ngModel)]="at"  
-  [ngModelOptions]="{standalone: true}"  
-   currencyMask 
-   [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
-   name="at"/>
+  <div class="result">{{f}}</div>
+  <div id="container">
+    
+    <ion-title >Preço do produto</ion-title>
+
+    <ion-item lines="none" class="f" >
+      <p>R$:</p>
+    
+   <input  type="tel" 
+   [(ngModel)]="at"  
+   placeholder="  0,00"
+   currencyMask   
+   [ngModelOptions]="{standalone: true}"  
+    currencyMask 
+    [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/>
+  
+</ion-item>
+  <div >
+  <ion-title class="d" >Valor com Desconto</ion-title>
+ </div>
+    <ion-item lines="none" class="f" >
+      <p>R$:</p>
+    
+   <input  type="tel" 
+   [(ngModel)]="va"  
+   placeholder="  0,00"
+   currencyMask   
+   [ngModelOptions]="{standalone: true}"  
+    currencyMask 
+    [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/>
   </ion-item>
-  <ion-item>
-  <label>Varejo</label>
-  <input type= 'tel'
-  placeholder=""
-  currencyMask [(ngModel)]="va"  
-  [ngModelOptions]="{standalone: true}"  
-   currencyMask 
-   [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
-   name="va"/>
-  </ion-item>
-  <td> {{ (at - va) }}</td>
-</ion-content>
+
+  <div class="div">
+  
+</div>
+
+<ion-fab vertical ="center" horizontal="end" edge slot="fixed" (click) ="doneA()">
+  <ion-fab-button>
+    <ion-icon name="checkmark-sharp"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

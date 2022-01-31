@@ -23,9 +23,11 @@ content{
 }
 .total{
     overflow: scroll;
-    height: 180px;
+    height: 250px;
     align-items: center;
     text-align: center;
+    position: relative;
+    
   
 
 }
@@ -37,6 +39,7 @@ ion-toolbar{
     display: flex;
     flex: 1;
     text-align: center;
+    align-items: center;
 }
 ion-button{
     
@@ -71,3 +74,24 @@ text{
 form{
     display: flex;
 }
+
+.up{
+    align-items: center;
+    position: absolute;
+    
+}
+.bu{
+    flex: 1;
+    text-align: left;
+    position: relative;
+}
+
+.fab{
+    display: inline-block !important;
+    font-size: 2rem !important;
+    margin-right: 2rem !important;
+    box-shadow: none;
+    margin-bottom: 70px;
+    margin-left: 50px;
+}
+    

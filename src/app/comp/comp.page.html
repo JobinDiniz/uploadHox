@@ -22,7 +22,7 @@
      <ion-title>Produto A</ion-title>
     </ion-item>
     <ion-item  lines = "none">
-      <form [formGroup]= "entryForm">
+      <div class="form">
         <p> R$: </p>
     <input 
     class="mon"
@@ -31,17 +31,15 @@
     currencyMask [(ngModel)]="a"  
     [ngModelOptions]="{standalone: true}"  
      currencyMask 
-     [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
-    
-     formControlName="a"/>  
-    </form>
+     [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/>  
+    </div>
     </ion-item>
 
    <ion-item  lines = "none">
    
     </ion-item>
     <ion-item  lines = "none">
-      <form [formGroup]= "entryForm">
+      <div class="form">
       <p> Peso:</p> 
       <input
       class="pes" 
@@ -52,15 +50,15 @@
       
       currencyMask 
       [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"
-      formControlName="b"/>
-    </form>
+     />
+    </div>
   </ion-item>
   <ion-item  lines = "none">
   <ion-title>Produto B</ion-title>
  </ion-item>
     <ion-item  lines = "none" >
    
-      <form [formGroup]= "entryForm"> 
+      <div class="form">
          <p> R$:</p>
      <input 
      class="mon"
@@ -68,37 +66,38 @@
      placeholder=""
      [ngModelOptions]="{standalone: true}"  
      currencyMask
-     formControlName ="c"
+   
      [(ngModel)]="c" 
      [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/>
-    </form>
+     </div>
    </ion-item>
    <ion-item  lines = "none">
    
       </ion-item>
       <ion-item  lines = "none">
-       <form [formGroup]= "entryForm">
+        <div class="form">
         <p> Peso:</p>
       <input 
       placeholder=""
       type= 'tel'
-      formControlName="d"
+      
       [ngModelOptions]="{standalone: true}"  
      class="pes"
       [(ngModel)]="d" 
       currencyMask 
       [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/> 
-     </form>
+        </div>
      
 </ion-item>
 <ion-item  lines = "none" >
    <p>Instruções aqui</p>
    </ion-item>
- </div>
-         <div>
-          
-          <ion-button (click) ="calcularIMC()"class="c">CALCULAR</ion-button>
-        </div>
+ </div> 
+ <ion-fab vertical ="center" horizontal="end" edge slot="fixed" (click) ="calcularIMC()">
+  <ion-fab-button>
+    <ion-icon name="checkmark-sharp"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 </content>
 
 <ion-footer>BANNER</ion-footer>
