@@ -19,18 +19,18 @@ font-size: larger;
 
 content{
     flex: 1;
+    text-align: center;
+    align-items: center;
      
 }
 .total{
     overflow: scroll;
-    height: 250px;
+   max-height: 250px;
     align-items: center;
     text-align: center;
     position: relative;
-    
-  
-
 }
+
 
 ion-header{
     text-align: center;
@@ -51,6 +51,7 @@ ion-title{
     text-align: center;
     padding: center;
     font-size: 4vh;
+    margin-top: 5%;
     
     
 }
@@ -71,7 +72,7 @@ text{
     font-size: larger;
     
 }
-form{
+.form{
     display: flex;
 }
 
@@ -86,12 +87,24 @@ form{
     position: relative;
 }
 
-.fab{
-    display: inline-block !important;
-    font-size: 2rem !important;
-    margin-right: 2rem !important;
-    box-shadow: none;
-    margin-bottom: 70px;
-    margin-left: 50px;
+ion-fab-button{
+    color: green;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 200vh;
+    
 }
     
+text{
+    font-size: medium;
+   
+  
+}
+
+.hint{
+    margin-top: 4vh;
+}
+
+strong{
+    color: aqua;
+}

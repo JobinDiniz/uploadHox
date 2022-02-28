@@ -12,8 +12,7 @@
 </ion-header>
 <ion-content>
 
-  <div class="result">{{f}}</div>
-  <div class="result">{{r}}</div>
+
   <div id="container">
     
     <ion-title >Valor do Produto</ion-title>
@@ -48,9 +47,16 @@
   <div class="div">
   
 </div>
-  <ion-fab vertical ="center" horizontal="end" edge slot="fixed" (click) ="doneD()">
+  <ion-fab vertical ="center" horizontal="end" edge slot="fixed" (click) ="doneD();presentAlert()">
     <ion-fab-button>
       <ion-icon name="checkmark-sharp"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
+  
+</div>
+<div class= 'hint'>
+  <text>*Insira os respectivos valores nos campos e pressione o botão verde para saber o valor do produto com seu respectivo desconto que foi selecionado</text>
+  </div>
+  
+    

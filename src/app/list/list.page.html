@@ -1,7 +1,15 @@
 <ion-header>
-  <ion-toolbar><ion-button (click)="back()">Voltar</ion-button>
-    <ion-title>list</ion-title>
-  </ion-toolbar>
+  <ion-tollbar>
+
+    <ion-button (click)="back()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+
+  
+   <ion-title >Lista</ion-title>
+  
+  
+  <ion-button><ion-icon name="refresh-outline"></ion-icon></ion-button>
+</ion-tollbar>
+
 </ion-header>
 
   
@@ -27,8 +35,8 @@
       <div class="list__item" [class.done]= "item.isDone"  *ngFor="let item of items; let ind = index;">
         {{item.value}}
       <div>
-      <button class = "btn list__item--done" (click)="setDone(ind)">Feita</button>
-      <button class = "btn list__item--delete" (click)="deleteItem(ind)">Del</button>
+      <button class = "btn list__item--done" (click)="setDone(ind)"><ion-icon name="checkmark"></ion-icon></button>
+      <button class = "btn list__item--delete" (click)="presentAlert(ind)"><ion-icon name="trash-outline"></ion-icon></button>
     </div>
     </div>
   </div>

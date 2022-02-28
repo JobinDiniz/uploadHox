@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController,AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-list',
@@ -9,11 +9,11 @@ import { NavController } from '@ionic/angular';
 export class ListPage implements OnInit {
 
   value = '';
-  options: string[] = ['Batata','Laranja','Feijão'];
+  options: string[];
 
-  items: any = ['Batata','Laranja','Feijão'];
+  items: any;
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController , public alertController: AlertController) {}
 
   ngOnInit() {
     if (localStorage.getItem('items')) {
@@ -30,7 +30,7 @@ export class ListPage implements OnInit {
 
   }
   deleteItem(ind){
-    this.items = this.items.filter((c, index) => index !== ind );
+   this.items = this.items.filter(( c,index) => index !== ind );
     localStorage.setItem('items' , JSON.stringify(this.items));
 
 
@@ -50,5 +50,27 @@ export class ListPage implements OnInit {
 
 
 }
+
+async presentAlert(ind) {
+  const alert = await this.alertController.create({
+    cssClass: 'alert',
+    header: 'Atenção!!',
+    message: `Quer realmente deletar o item ?`,
+    buttons: [{
+      text: 'Excluir',
+      handler: () =>  {this.deleteItem(ind);
+   } },
+'Cancelar'] ,
+
+  });
+
+  await alert.present();
+
+
+
+}
+//clearList(){
+  //localStorage.clear();
+//}
 
 }

@@ -4,23 +4,26 @@
 }
 
 .result{
-text-align: center;
-margin-top: 3vh;
-font-size: large;
-color: crimson;
-}
+    text-align: center;
+    margin-top: 5vh;
+    font-size: large;
+    color: crimson;
+    margin-bottom: 5vh;
+    }
 
  ion-title{
         display: flex;
         text-align: center;
         padding: center;
         font-size: 4vh;
+        margin-top: 5%;
         
         }
 
 
 ion-tollbar{
     display: flex;
+    
    
 }
 input{
@@ -38,6 +41,18 @@ font-size: larger;
 }
 ion-segment{
     border: 2px;
-    background:rgb(41, 128, 0);
+    background:lightgreen;
+    
 
 }
+.tab{
+    margin-top: 3vh;
+}
+
+.hint{
+    margin-top: 4vh;
+}
+ion-label{
+    color: whitesmoke   ;
+}
+

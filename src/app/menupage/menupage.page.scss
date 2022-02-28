@@ -6,9 +6,10 @@ background-color: cornsilk;
 }
 
 ion-title{
+    flex: 1;
     color: blue;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 4vh;
+    font-size: 150%;
     
 }
 
@@ -23,12 +24,12 @@ ion-button{
     text-align: center;
     width: 100%;
     color:green;
-    height:8vh;
+    height:7vh;
     font-size: large;
     
 }
 
 text{
-    height: 5vh;
+    height: 50%;
     
 }

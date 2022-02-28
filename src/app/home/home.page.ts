@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController,AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -10,28 +10,40 @@ import { NavController } from '@ionic/angular';
 
 export class HomePage {
 
-  p: number;
-  h: number;
+  p = 0;
+  h = 0;
   result;
   a;
   f;
   hours;
   minutes;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController,  public alertController: AlertController) {}
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'alert',
+      header: 'Atenção!!',
+      message: `${this.f}`,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+  }
   reseT(){
 this.p = 0;
 this.h = 0;
+this.f = '';
 
   }
 
 calcH(){
   if(this.p === 0){
-    this.f = 'número invalido 1';
+    this.f = 'número invalido ';
   }
   if(this.h === 0){
-    this.f = 'número invalido 2';
+    this.f = 'número invalido ';
   }
   if(this.p >0 && this.h> 0){
 this.result= (this.p)/(this.h);
@@ -50,10 +62,10 @@ this.result= (this.p)/(this.h);
 calcD(){
 
   if(this.p === 0){
-    this.f = 'número invalido 1';
+    this.f = 'número invalido ';
   }
   if(this.h === 0){
-    this.f = 'número invalido 2';
+    this.f = 'número invalido ';
   }
   if(this.p >0 && this.h> 0){
     this.result = ((this.p)/(this.h))/24;
@@ -62,10 +74,10 @@ calcD(){
 }
 calcM(){
   if(this.p === 0){
-    this.f = 'número invalido 1';
+    this.f = 'número invalido ';
   }
   if(this.h === 0){
-    this.f = 'número invalido 2';
+    this.f = 'número invalido ';
   }
   if(this.p >0 && this.h> 0){
   this.result = ((this.p)/(this.h))/(30*24);
@@ -75,10 +87,10 @@ calcM(){
 }
 calcY(){
   if(this.p === 0){
-    this.f = 'número invalido 1';
+    this.f = 'número invalido ';
   }
   if(this.h === 0){
-    this.f = 'número invalido 2';
+    this.f = 'número invalido ';
   }
   if(this.p >0 && this.h> 0){
  this.result = ((this.p)/(this.h))/8760;

@@ -5,16 +5,24 @@
 
 .result{
 text-align: center;
-margin-top: 3vh;
+margin-top: 1vh;
 font-size: large;
 color: crimson;
 }
+.result2{
+    text-align: center;
+    padding-top: 1vh;
+    font-size: large;
+    color: crimson;
+    padding-bottom: 5vh;
 
+}
  ion-title{
         display: flex;
         text-align: center;
         padding: center;
         font-size: 4vh;
+        margin-top: 5%;
         
         }
 
@@ -35,4 +43,7 @@ font-size: larger;
 }
 .d{
  margin-top: 50px;
+}
+.hint{
+    margin-top: 10vh;
 }

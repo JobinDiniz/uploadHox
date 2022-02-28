@@ -11,9 +11,9 @@
 </ion-tollbar>
 
 </ion-header>
-<ion-content>
+<ion-content [fullscreen]="true">
   
-  <div class="result">{{f}}</div>
+
   <div id="container">
     
     <ion-title >Preço do produto</ion-title>
@@ -48,9 +48,17 @@
   <div class="div">
   
 </div>
-  <ion-fab vertical ="center" horizontal="end" edge slot="fixed" (click) ="doneP()">
+  <ion-fab vertical ="center" horizontal="end" edge slot="fixed" (click) ="doneP();  presentAlert()">
     <ion-fab-button>
       <ion-icon name="checkmark-sharp"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+ 
+    <div class= 'hint'>
+      <text>*Insira o "Valor" para descobrir quanto representa em porcentagem do "Preço do produto"</text>
+      </div>
+      
+
+     
+      
 

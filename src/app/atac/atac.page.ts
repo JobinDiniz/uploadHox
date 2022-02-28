@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, AlertController} from '@ionic/angular';
 
 @Component({
   selector: 'app-atac',
@@ -9,9 +9,22 @@ import { NavController } from '@ionic/angular';
 export class AtacPage implements OnInit {
   at = 0;
   va = 0;
-  f;
 
-  constructor(public navCtrl: NavController) { }
+
+  constructor(public navCtrl: NavController,  public alertController: AlertController) { }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'alert',
+      header: 'Atenção!!',
+      message: `O valor do desconto é R$${(this.at - this.va)}`,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+  }
+
 
   ngOnInit() {
   }
@@ -21,12 +34,6 @@ export class AtacPage implements OnInit {
   resetAt(){
     this.at = 0;
     this.va = 0;
-    this.f = '';
-  }
-  doneA(){
-    this.f = `O valor do desconto é R$${(this.at - this.va)}`;
 
   }
-
-
 }

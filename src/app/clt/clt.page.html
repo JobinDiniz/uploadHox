@@ -7,7 +7,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="result">{{f}}</div>
+  
+  
   <div id="container">
     
     <ion-title >Preço do produto</ion-title>
@@ -45,16 +46,16 @@
 
   <ion-toolbar>
     <ion-segment value="all">
-      <ion-segment-button (click)="calcH()">
+      <ion-segment-button (click)="calcH(); presentAlert()">
         <ion-label>Horas</ion-label>
       </ion-segment-button>
-      <ion-segment-button (click)="calcD()">
+      <ion-segment-button (click)="calcD(); presentAlert()">
         <ion-label>Dias</ion-label>
       </ion-segment-button>
-      <ion-segment-button (click)="calcM()" >
+      <ion-segment-button (click)="calcM();  presentAlert()" >
         <ion-label>Meses</ion-label>
       </ion-segment-button>
-      <ion-segment-button (click)="calcY()" >
+      <ion-segment-button (click)="calcY(); presentAlert()" >
         <ion-label>Anos</ion-label>
       </ion-segment-button>
      
@@ -67,6 +68,15 @@
   
    
     </div>
-  
+    <div class= 'hint'>
+      <text>*Insira os respectivos valores nos campos e pressione o botão verde para saber o custo do produto em relação ao valor da sua hora trabalhada</text>
+      </div>
+      <div class= 'hint'>
+        <text>**Os valores são aproximados</text>
+        </div>
+        <div class= 'hint'>
+          <text>***Para cálculo de "Dia", foi considerado 8 horas trabalhadas.Para cálculo de "Mês", o valor é multiplicado por 220</text>
+          </div>
+        
   
 </ion-content>

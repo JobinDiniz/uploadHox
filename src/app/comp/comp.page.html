@@ -1,29 +1,22 @@
 
   <ion-header>
     <ion-tollbar>
-  
       <ion-button (click)="back()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
-  
-    
      <ion-title >Comparador</ion-title>
-    
-    
     <ion-button   (click) ="resetIMC()" class="b"><ion-icon name="refresh-outline"></ion-icon></ion-button>
   </ion-tollbar>
 
 </ion-header>
 
 <content >
-  <div class="result">
-  <ion-text>{{result}} </ion-text>     
-</div>
+
 <div class="total">
 <ion-item lines = "none">
      <ion-title>Produto A</ion-title>
     </ion-item>
     <ion-item  lines = "none">
       <div class="form">
-        <p> R$: </p>
+        <p>R$:</p>
     <input 
     class="mon"
     type= 'tel'
@@ -40,7 +33,7 @@
     </ion-item>
     <ion-item  lines = "none">
       <div class="form">
-      <p> Peso:</p> 
+      <p>Peso:</p> 
       <input
       class="pes" 
       type= 'tel'
@@ -59,14 +52,13 @@
     <ion-item  lines = "none" >
    
       <div class="form">
-         <p> R$:</p>
+         <p>R$:</p>
      <input 
      class="mon"
      type= 'tel'
      placeholder=""
      [ngModelOptions]="{standalone: true}"  
      currencyMask
-   
      [(ngModel)]="c" 
      [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/>
      </div>
@@ -76,28 +68,38 @@
       </ion-item>
       <ion-item  lines = "none">
         <div class="form">
-        <p> Peso:</p>
+        <p>Peso:</p>
       <input 
       placeholder=""
       type= 'tel'
-      
       [ngModelOptions]="{standalone: true}"  
      class="pes"
       [(ngModel)]="d" 
       currencyMask 
       [options]="{ prefix: ' ', thousands: '.', decimal: ',' }"/> 
         </div>
-     
 </ion-item>
 <ion-item  lines = "none" >
-   <p>Instruções aqui</p>
+   
    </ion-item>
  </div> 
- <ion-fab vertical ="center" horizontal="end" edge slot="fixed" (click) ="calcularIMC()">
-  <ion-fab-button>
-    <ion-icon name="checkmark-sharp"></ion-icon>
+ <ion-fab vertical ="center" horizontal="end" edge slot="fixed" >
+  <ion-fab-button   color="sucess" (click) ="calcularIMC(); presentAlert()" >
+    <ion-icon  name="checkmark-sharp"></ion-icon>
   </ion-fab-button>
 </ion-fab>
+<ion-fab vertical ="center" horizontal="start" edge slot="fixed" >
+  <ion-fab-button  *ngIf="change" (click) ="onChange()"  >
+    Kilos
+  </ion-fab-button>
+  <ion-fab-button  *ngIf="!change" (click) ="onChange()"   >
+    Gramas
+  </ion-fab-button>
+</ion-fab>
+
+<div class= 'hint'>
+<text>*Insira os respectivos valores nos campos e pressione o botão verde para saber, qual seria o produto mais vantajoso financeiramente.</text>
+</div>
 </content>
 
-<ion-footer>BANNER</ion-footer>
+

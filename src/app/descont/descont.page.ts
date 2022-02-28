@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-descont',
@@ -12,7 +12,18 @@ d = 0;
 f;
 r;
 
-  constructor(   public navCtrl: NavController) { }
+  constructor(   public navCtrl: NavController, public alertController: AlertController) { }
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'alert',
+      header: 'Atenção!!',
+      message: `${this.f}  ${this.r}`,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+  }
 
   ngOnInit() {
   }

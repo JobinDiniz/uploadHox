@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController,AlertController} from '@ionic/angular';
 
 
 @Component({
@@ -8,16 +8,26 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./clt.page.scss'],
 })
 export class CltPage implements OnInit {
-p: number;
-  h: number;
+  p = 0;
+  h = 0;
   result;
   a;
   f;
   hours;
   minutes;
+  constructor(public navCtrl: NavController , public alertController: AlertController) { }
 
-  constructor(public navCtrl: NavController) { }
+  async presentAlert() {
+  const alert = await this.alertController.create({
+    cssClass: 'alert',
+    header: 'Atenção!!',
+    message: `${this.f}`,
+    buttons: ['OK']
+  });
 
+  await alert.present();
+
+}
   ngOnInit() {
   }
 
@@ -30,15 +40,16 @@ p: number;
   reseT(){
 this.p = 0;
 this.h = 0;
+this.f = '';
 
   }
 
 calcH(){
   if(this.p === 0){
-    this.f = 'número invalido 1';
+    this.f = 'Número invalido ';
   }
   if(this.h === 0){
-    this.f = 'número invalido 2';
+    this.f = 'Número invalido ';
   }
   if(this.p >0 && this.h> 0){
 this.result= (this.p)/(this.h);
@@ -52,40 +63,44 @@ this.result= (this.p)/(this.h);
 
 calcD(){
   if(this.p === 0){
-    this.f = 'número invalido 1';
+    this.f = 'Número invalido ';
   }
   if(this.h === 0){
-    this.f = 'número invalido 2';
+    this.f = 'Número invalido ';
   }
   if(this.p >0 && this.h> 0){
     this.result = ((this.p)/(this.h))/8;
  this.f =`Custou ${this.result.toFixed()} dia (s)`;
+
+
 }
 }
 calcM(){
   if(this.p === 0){
-    this.f = 'número invalido 1';
+    this.f = 'Número invalido ';
   }
   if(this.h === 0){
-    this.f = 'número invalido 2';
+    this.f = 'Número invalido ';
   }
   if(this.p >0 && this.h> 0){
   this.result = ((this.p)/(this.h))/(220);
-  this.f =`Custou ${this.result.toFixed()} mês (s)`;
+  this.f =`Custou aproximadamente  ${this.result.toFixed()} mês (s)`;
 }
 }
 calcY(){
   if(this.p === 0){
-    this.f = 'número invalido 1';
+    this.f = 'Número invalido ';
   }
   if(this.h === 0){
-    this.f = 'número invalido 2';
+    this.f = 'Número invalido ';
   }
   if(this.p >0 && this.h> 0){
  this.result = ((this.p)/(this.h))/2640;
- this.f = `Custou ${this.result.toFixed(1)} de ano(s)`;
+ this.f = `Custou aproximadamente ${this.result.toFixed(1)} de ano(s)`;
 }
+
 }
+
 
 
 }

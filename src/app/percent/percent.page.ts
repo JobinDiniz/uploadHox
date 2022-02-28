@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController,AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-percent',
   templateUrl: './percent.page.html',
@@ -10,7 +10,20 @@ export class PercentPage implements OnInit {
   pe = 0;
   f;
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, public alertController: AlertController) { }
+
+  async presentAlert() {
+  const alert = await this.alertController.create({
+    cssClass: 'alert',
+    header: 'Atenção!!',
+    message: `${this.f}`,
+    buttons: ['OK']
+  });
+
+  await alert.present();
+
+}
+
 
   ngOnInit() {
   }
@@ -21,22 +34,23 @@ export class PercentPage implements OnInit {
  resetP(){
 this.n = 0;
 this.pe = 0;
-this.f = 0;
+this.f = '';
 
  }
 
  doneP(){
    this.f = `O resultado é  ${((this.pe/this.n)*100)} %` ;
    if (this.n <=0){
-     this.f = `Error`;
+     this.f = `Número invalido`;
     if(this.pe <=0){
-      this.f = `Error`;
+      this.f = `Número invalido`;
     }
     if(this.pe === 0){
-      this.f = `Error`;
+      this.f =`Número invalido` ;
     }
-    if((this.n === 0) || (this.pe ===0 )){
-      this.f = `Errado`;
+    if((this.n === 0) || (this.pe ===0 ))
+    {
+      this.f = `Número invalido`;
     }
 
    }
